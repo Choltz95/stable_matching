@@ -46,7 +46,7 @@ def match():
             current_acceptor_preference = acceptor_preferences[current_acceptor]
             if current_acceptor_preference.index(fiance) > current_acceptor_preference.index(current_proposer): # a prefers p to p'
                 engaged[current_acceptor] = current_proposer
-                print("  %s prefers %s over %s" % (current_acceptor, current_proposer, fiance))
+                print("  (%s,%s) => (%s,%s)" % (fiance, current_acceptor, current_proposer, current_acceptor))
                 if proposer_preferences[fiance]:
                     free_proposers.append(fiance)
             else: # a remains with p'
@@ -63,6 +63,6 @@ def main():
     engaged = match()
      
     print('\nCouples:')
-    print('  ' + ',\n  '.join('(%s,%s)' % couple
+    print('  ' + '\n  '.join('(%s,%s)' % couple
                               for couple in sorted(engaged.items())))
 main()
