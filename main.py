@@ -31,6 +31,9 @@ function stableMatching {
     }
 }
 '''
+def check():
+    return 1
+
 def match():
     free_proposers = propsers[:]
     engaged  = {}
